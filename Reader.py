@@ -36,3 +36,4 @@ def ReadStudentData(directory):
                     students.append(student)
 
     return students
+    
