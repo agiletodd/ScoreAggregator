@@ -6,7 +6,7 @@ from validate_email import validate_email
 def ReadStudentData(directory):
     """
     :param directory: OS directory to search for course files
-    :return: A dictionary of Students found in spreadsheets
+    :return: A dictionary of Students found in Scrum.org spreadsheets
     """
     students = []
     firstname_col = 0

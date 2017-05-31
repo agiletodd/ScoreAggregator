@@ -11,7 +11,10 @@ def WriteData(filename, students):
     Update_Existing_Students(filename, students)
 
 def Update_Existing_Students(filename, students):
-
+    """
+    :param filename, list of students
+    :return: Updates all existing student scores
+    """
     wb = load_workbook(filename=filename)
     sheet = wb.get_sheet_by_name('Attendees')
 
@@ -26,7 +29,7 @@ def Update_Existing_Students(filename, students):
         course_cell = sheet.cell(row=idx, column=COURSE_COL)
 
         # query student data loaded from .org sheets and look for a match
-        # ! MUST CHECK FOR MULTIPLES -- MAYBE ADD COURSE !
+        # ! MUST CHECK FOR MULTIPLES IN THE EVENT STUDENT ATTENDS TWO COURSES -- MAYBE ADD COURSE !
         student = Student.find_by_email(email_cell)
 
         if student:

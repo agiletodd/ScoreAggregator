@@ -1,5 +1,5 @@
 from Reader import ReadStudentData
-from Writer import WriteData
+from Updater import Update_Existing_Students
 
 def main():
     read_file_directory = '/Users/toddmiller/Downloads/'
@@ -9,7 +9,7 @@ def main():
 
     students = ReadStudentData(read_file_directory)
 
-    WriteData(write_file, students)
+    Update_Existing_Students(write_file, students)
 
 if __name__ == "__main__":
     main()
