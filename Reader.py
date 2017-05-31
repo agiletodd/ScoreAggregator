@@ -32,6 +32,7 @@ def ReadStudentData(directory):
                     firstname = first_sheet.cell(row_idx, firstname_col).value
                     lastname = first_sheet.cell(row_idx, lastname_col).value
                     score = first_sheet.cell(row_idx, score_col).value
+
                     student = Student(firstname, lastname, email, score, course)
                     students.append(student)
 

@@ -1,4 +1,7 @@
+from collections import defaultdict
+
 class Student:
+    email_index = defaultdict(list)
 
     def __init__(self, firstname, lastname, email, score, course):
         self.firstname = firstname
@@ -6,21 +9,8 @@ class Student:
         self.email = email
         self.score = score
         self.course = course
+        Student.email_index[email].append(self)
 
-# Id	
-# First Name
-# Last Name	
-# Email	
-# Address 1	
-# Address 2	
-# City	
-# State	
-# Zip	
-# Country
-# Company
-# Class	
-# Class 
-# Type	
-# Class Date
-# Exam Score
-# Took Exam
+    @classmethod
+    def find_by_email(cls, email):
+        return Student.email_index[email]
